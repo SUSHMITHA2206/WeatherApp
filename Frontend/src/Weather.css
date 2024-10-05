@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #87ceeb; /* Sky blue background */
+    contain: content;
+}
+
+.App {
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Positioning context for clouds */
+}
+
+/* Cloud styles */
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8; /* Slightly transparent */
+    animation: move 15s linear infinite; /* Animation for clouds */
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud1 {
+    width: 100px;
+    height: 60px;
+    top: 20%;
+    left: 10%;
+}
+
+.cloud1::before {
+    width: 70px;
+    height: 70px;
+    top: -20px;
+    left: 10px;
+}
+
+.cloud1::after {
+    width: 90px;
+    height: 50px;
+    top: -15px;
+    left: 30px;
+}
+
+.cloud2 {
+    width: 120px;
+    height: 70px;
+    top: 30%;
+    left: 50%;
+}
+
+.cloud2::before {
+    width: 80px;
+    height: 80px;
+    top: -25px;
+    left: 15px;
+}
+
+.cloud2::after {
+    width: 110px;
+    height: 60px;
+    top: -20px;
+    left: 40px;
+}
+
+/* Animation for clouds */
+@keyframes move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100vw); } /* Move clouds across the viewport */
+}
+
+/* Sun styles */
+.sun {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    background: yellow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
+    animation: spin 10s linear infinite; /* Animation for sun */
+}
+
+/* Sun animation */
+@keyframes spin {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Additional styling */
+h1 {
+    font-size: 2.5em;
+    color: #4a90e2;
+    margin-top: 100px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.weather-info {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-info h2 {
+    margin: 0;
+    color: #4a90e2;
+}
+.forecast-container {
+    margin-top: 20px;
+    display: flex;
+}
+
+.forecast-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 200px;
+    text-align: center;
+}
